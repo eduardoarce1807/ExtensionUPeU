@@ -1,7 +1,4 @@
-*{
-    padding: 0;
-    margin: 0;
-}
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 body{
     width: 380px;
 }

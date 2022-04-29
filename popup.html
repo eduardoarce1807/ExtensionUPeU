@@ -12,45 +12,82 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 </head>
 
-<body>
+<body style="font-family: 'Rubik', sans-serif;">
 
-    <nav class="navbar navbar-dark bg-dark">
+    <nav class="navbar navbar-dark" style="background-color: #0f3971;">
         <div class="container">
             <a class="navbar-brand" href="#" style="font-size: 18px;">
-                <img src="https://webapp.upeu.edu.pe/sge/resources/img/logo-upeu-color.png" alt="" width="30"
+                <img src="logo-upeu.png" alt="" width="30"
                     height="30">
                 &nbsp;Extensión PatmOS
             </a>
-            <a id="bTareas"><i style="text-align: right; padding-right: 8px;"
-                    class="bi bi-clipboard2-check text-light"></i></a>
-            <a id="bCursos"><i style="text-align: right; padding-right: 8px;" class="bi bi-book text-light"></i></a>
-            <a id="bSettings"><i style="text-align: right; padding-right: 8px;" class="bi bi-gear text-light"></i></a>
+            <a id="bCursos"><i id="iCursos" style="text-align: right; padding-right: 8px;" class="bi bi-book text-light"></i></a>
+            <a id="bTareas"><i id="iTareas" style="text-align: right; padding-right: 8px;" class="bi bi-clipboard2-check text-light"></i></a>
+            <a id="bLogout"><i id="iLogout" style="text-align: right; padding-right: 8px;" class="bi bi-box-arrow-right text-light"></i></a>
         </div>
     </nav>
 
-    <div id="login" class="container my-3">
+    <div style="padding-bottom:60px;">
+        <div id="login" class="container my-2">
 
-        <form>
-            <div class="mb-3">
-                <label for="username" class="form-label">Usuario</label>
-                <input type="text" class="form-control" id="username" value="eduardoarce">
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="password" value="Laptophp18$">
-            </div>
-            <div id="alert" class="col-12">
-                <div class="alert alert-danger" role="alert">
-                    Error en inicio de sesión, inténtelo nuevamente.
+            <form>
+                <div class="mb-3">
+                    <label for="username" class="form-label"><b>Usuario</b></label>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-fill"></i></span>
+                        <input type="text" class="form-control" placeholder="Usuario" id="username" aria-label="Usuario" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label"><b>Contraseña</b></label>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon2"><i class="bi bi-lock-fill"></i></span>
+                        <input type="password" class="form-control" placeholder="Contraseña" id="password" aria-label="Password" aria-describedby="basic-addon2">
+                    </div>
+                </div>
+                <div id="alert" class="col-12">
+                    <div id="alertText" class="alert alert-danger" role="alert">
+                    </div>
+                </div>
+                <button style="background-color: #0f3971;" type="button" id="bLogin" class="btn btn-primary col-12">Iniciar Sesión</button><br><br>
+            </form>
+        </div>
+    
+        <div id="contentCursos" class="container mt-2">
+            <h3><b>Cursos:</b></h3>
+            <!-- Content here -->
+        </div>
+    
+        <div id="contentTareas" class="container mt-2">
+            <!-- Content here -->
+        </div>
+    
+        <div id="logout" class="container mt-2">
+            <!-- Content here -->
+            <h3><b>Logout:</b></h3>
+            <p>¿Desea cerrar su sesión?</p>
+            <div class="row">
+                <div class="col">
+                    <button id="bLogoutX" type="button" class="btn btn-danger col-12">Salir</button>
                 </div>
             </div>
-            <button type="button" id="bLogin" class="btn btn-primary col-12">Iniciar Sesión</button>
-        </form>
+            <br>
+        </div>
     </div>
-
-    <div id="contentCursos" class="container mt-2">
-        <!-- Content here -->
+    
+    <div class="fixed-bottom bg-light" style="height:70px;">
         
+        <div class="container my-3">
+            <div class="row">
+                <div class="col-6">
+                    <button style="background-color: #0f3971;" id="goPatmos" type="button" class="btn btn-dark col-12">Abrir PatmOS&nbsp;&nbsp;<i class="bi bi-box-arrow-up-right"></i></button><br>
+                </div>
+                <div class="col-6">
+                    <button style="background-color: #0f3971;" id="goLamb" type="button" class="btn btn-dark col-12">Abrir Lamb&nbsp;&nbsp;<i class="bi bi-box-arrow-up-right"></i></button><br>
+                </div>
+            </div>
+        </div>
+    
     </div>
 
     <!-- Usuario&nbsp;<input type="text" id="username" size=50 value=""><br>

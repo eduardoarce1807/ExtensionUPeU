@@ -4,6 +4,7 @@
 	"manifest_version": 3,
 	"author": "Eduardo Antonio Arce Saavedra",
 	"description": "Extensión para ver cursos y tareas pendientes del PatmOS",
+	"permissions": ["storage", "scripting"],
 	"host_permissions": [
 	  "http://*/*",
 	  "https://*/*"
