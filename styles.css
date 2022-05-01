@@ -1,4 +1,330 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
-body{
+
+body {
     width: 380px;
 }
+
+#ballsWaveG{
+	position:relative;
+	width:125px;
+	height:29px;
+	margin:auto;
+}
+
+.ballsWaveG{
+	position:absolute;
+	top:0;
+	background-color:rgb(15,57,113);
+	width:16px;
+	height:16px;
+	animation-name:ballsWaveG;
+		-o-animation-name:ballsWaveG;
+		-ms-animation-name:ballsWaveG;
+		-webkit-animation-name:ballsWaveG;
+		-moz-animation-name:ballsWaveG;
+	animation-duration:1.105s;
+		-o-animation-duration:1.105s;
+		-ms-animation-duration:1.105s;
+		-webkit-animation-duration:1.105s;
+		-moz-animation-duration:1.105s;
+	animation-iteration-count:infinite;
+		-o-animation-iteration-count:infinite;
+		-ms-animation-iteration-count:infinite;
+		-webkit-animation-iteration-count:infinite;
+		-moz-animation-iteration-count:infinite;
+	animation-direction:normal;
+		-o-animation-direction:normal;
+		-ms-animation-direction:normal;
+		-webkit-animation-direction:normal;
+		-moz-animation-direction:normal;
+	border-radius:8px;
+		-o-border-radius:8px;
+		-ms-border-radius:8px;
+		-webkit-border-radius:8px;
+		-moz-border-radius:8px;
+}
+
+#ballsWaveG_1{
+	left:0;
+	animation-delay:0.446s;
+		-o-animation-delay:0.446s;
+		-ms-animation-delay:0.446s;
+		-webkit-animation-delay:0.446s;
+		-moz-animation-delay:0.446s;
+}
+
+#ballsWaveG_2{
+	left:16px;
+	animation-delay:0.5525s;
+		-o-animation-delay:0.5525s;
+		-ms-animation-delay:0.5525s;
+		-webkit-animation-delay:0.5525s;
+		-moz-animation-delay:0.5525s;
+}
+
+#ballsWaveG_3{
+	left:31px;
+	animation-delay:0.659s;
+		-o-animation-delay:0.659s;
+		-ms-animation-delay:0.659s;
+		-webkit-animation-delay:0.659s;
+		-moz-animation-delay:0.659s;
+}
+
+#ballsWaveG_4{
+	left:47px;
+	animation-delay:0.7755s;
+		-o-animation-delay:0.7755s;
+		-ms-animation-delay:0.7755s;
+		-webkit-animation-delay:0.7755s;
+		-moz-animation-delay:0.7755s;
+}
+
+#ballsWaveG_5{
+	left:62px;
+	animation-delay:0.882s;
+		-o-animation-delay:0.882s;
+		-ms-animation-delay:0.882s;
+		-webkit-animation-delay:0.882s;
+		-moz-animation-delay:0.882s;
+}
+
+#ballsWaveG_6{
+	left:78px;
+	animation-delay:0.9985s;
+		-o-animation-delay:0.9985s;
+		-ms-animation-delay:0.9985s;
+		-webkit-animation-delay:0.9985s;
+		-moz-animation-delay:0.9985s;
+}
+
+#ballsWaveG_7{
+	left:94px;
+	animation-delay:1.105s;
+		-o-animation-delay:1.105s;
+		-ms-animation-delay:1.105s;
+		-webkit-animation-delay:1.105s;
+		-moz-animation-delay:1.105s;
+}
+
+#ballsWaveG_8{
+	left:109px;
+	animation-delay:1.2115s;
+		-o-animation-delay:1.2115s;
+		-ms-animation-delay:1.2115s;
+		-webkit-animation-delay:1.2115s;
+		-moz-animation-delay:1.2115s;
+}
+
+
+
+@keyframes ballsWaveG{
+	0%{
+		background-color:rgb(15,57,113);
+	}
+
+	100%{
+		background-color:rgb(255,255,255);
+	}
+}
+
+@-o-keyframes ballsWaveG{
+	0%{
+		background-color:rgb(15,57,113);
+	}
+
+	100%{
+		background-color:rgb(255,255,255);
+	}
+}
+
+@-ms-keyframes ballsWaveG{
+	0%{
+		background-color:rgb(15,57,113);
+	}
+
+	100%{
+		background-color:rgb(255,255,255);
+	}
+}
+
+@-webkit-keyframes ballsWaveG{
+	0%{
+		background-color:rgb(15,57,113);
+	}
+
+	100%{
+		background-color:rgb(255,255,255);
+	}
+}
+
+@-moz-keyframes ballsWaveG{
+	0%{
+		background-color:rgb(15,57,113);
+	}
+
+	100%{
+		background-color:rgb(255,255,255);
+	}
+}
+
+.cssload-loader {
+	width: 97px;
+	height: 19px;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, -50%);
+		-o-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		-webkit-transform: translate(-50%, -50%);
+		-moz-transform: translate(-50%, -50%);
+}
+.cssload-loader > div {
+	content: " ";
+	width: 19px;
+	height: 19px;
+	background: rgb(220,53,69);
+	border-radius: 100%;
+	position: absolute;
+	animation: cssload-shift 2.3s linear infinite;
+		-o-animation: cssload-shift 2.3s linear infinite;
+		-ms-animation: cssload-shift 2.3s linear infinite;
+		-webkit-animation: cssload-shift 2.3s linear infinite;
+		-moz-animation: cssload-shift 2.3s linear infinite;
+}
+.cssload-loader > div:nth-of-type(1) {
+	animation-delay: -0.46s;
+		-o-animation-delay: -0.46s;
+		-ms-animation-delay: -0.46s;
+		-webkit-animation-delay: -0.46s;
+		-moz-animation-delay: -0.46s;
+}
+.cssload-loader > div:nth-of-type(2) {
+	animation-delay: -0.92s;
+		-o-animation-delay: -0.92s;
+		-ms-animation-delay: -0.92s;
+		-webkit-animation-delay: -0.92s;
+		-moz-animation-delay: -0.92s;
+}
+.cssload-loader > div:nth-of-type(3) {
+	animation-delay: -1.38s;
+		-o-animation-delay: -1.38s;
+		-ms-animation-delay: -1.38s;
+		-webkit-animation-delay: -1.38s;
+		-moz-animation-delay: -1.38s;
+}
+.cssload-loader > div:nth-of-type(4) {
+	animation-delay: -1.84s;
+		-o-animation-delay: -1.84s;
+		-ms-animation-delay: -1.84s;
+		-webkit-animation-delay: -1.84s;
+		-moz-animation-delay: -1.84s;
+}
+
+
+
+@keyframes cssload-shift {
+	0% {
+		left: -58px;
+		opacity: 0;
+		background-color: rgb(220,53,69);
+	}
+	10% {
+		left: 0;
+		opacity: 1;
+	}
+	90% {
+		left: 97px;
+		opacity: 1;
+	}
+	100% {
+		left: 156px;
+		background-color: rgb(220,53,69);
+		opacity: 0;
+	}
+}
+
+@-o-keyframes cssload-shift {
+	0% {
+		left: -58px;
+		opacity: 0;
+		background-color: rgb(220,53,69);
+	}
+	10% {
+		left: 0;
+		opacity: 1;
+	}
+	90% {
+		left: 97px;
+		opacity: 1;
+	}
+	100% {
+		left: 156px;
+		background-color: rgb(220,53,69);
+		opacity: 0;
+	}
+}
+
+@-ms-keyframes cssload-shift {
+	0% {
+		left: -58px;
+		opacity: 0;
+		background-color: rgb(220,53,69);
+	}
+	10% {
+		left: 0;
+		opacity: 1;
+	}
+	90% {
+		left: 97px;
+		opacity: 1;
+	}
+	100% {
+		left: 156px;
+		background-color: rgb(220,53,69);
+		opacity: 0;
+	}
+}
+
+@-webkit-keyframes cssload-shift {
+	0% {
+		left: -58px;
+		opacity: 0;
+		background-color: rgb(220,53,69);
+	}
+	10% {
+		left: 0;
+		opacity: 1;
+	}
+	90% {
+		left: 97px;
+		opacity: 1;
+	}
+	100% {
+		left: 156px;
+		background-color: rgb(220,53,69);
+		opacity: 0;
+	}
+}
+
+@-moz-keyframes cssload-shift {
+	0% {
+		left: -58px;
+		opacity: 0;
+		background-color: rgb(220,53,69);
+	}
+	10% {
+		left: 0;
+		opacity: 1;
+	}
+	90% {
+		left: 97px;
+		opacity: 1;
+	}
+	100% {
+		left: 156px;
+		background-color: rgb(220,53,69);
+		opacity: 0;
+	}
+}
+

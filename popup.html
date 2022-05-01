@@ -16,14 +16,19 @@
 
     <nav class="navbar navbar-dark" style="background-color: #0f3971;">
         <div class="container">
-            <a class="navbar-brand" href="#" style="font-size: 18px;">
+            <a class="navbar-brand" href="#" style="font-size: 17px;">
                 <img src="logo-upeu.png" alt="" width="30"
                     height="30">
-                &nbsp;Extensión PatmOS
+                <span id="navText" class="navbar-text" style="color: white;">
+                    &nbsp;Extensión PatmOS
+                </span>
             </a>
             <a id="bCursos"><i id="iCursos" style="text-align: right; padding-right: 8px;" class="bi bi-book text-light"></i></a>
             <a id="bTareas"><i id="iTareas" style="text-align: right; padding-right: 8px;" class="bi bi-clipboard2-check text-light"></i></a>
-            <a id="bLogout"><i id="iLogout" style="text-align: right; padding-right: 8px;" class="bi bi-box-arrow-right text-light"></i></a>
+            <!-- <a id="bLogout"><i id="iLogout" style="text-align: right; padding-right: 8px;" class="bi bi-box-arrow-right text-light"></i></a> -->
+            <span id="bLogout">
+                <img id="imgUser" style="border-radius: 50%;" width="30px" height="30px" src="user.svg" alt="avatar">
+            </span>
         </div>
     </nav>
 
@@ -35,26 +40,36 @@
                     <label for="username" class="form-label"><b>Usuario</b></label>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-fill"></i></span>
-                        <input type="text" class="form-control" placeholder="Usuario" id="username" aria-label="Usuario" aria-describedby="basic-addon1">
+                        <input value="eduardoarce" type="text" class="form-control" placeholder="Usuario" id="username" aria-label="Usuario" aria-describedby="basic-addon1">
                     </div>
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label"><b>Contraseña</b></label>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon2"><i class="bi bi-lock-fill"></i></span>
-                        <input type="password" class="form-control" placeholder="Contraseña" id="password" aria-label="Password" aria-describedby="basic-addon2">
+                        <input value="Laptophp18$" type="password" class="form-control" placeholder="Contraseña" id="password" aria-label="Password" aria-describedby="basic-addon2">
                     </div>
                 </div>
                 <div id="alert" class="col-12">
                     <div id="alertText" class="alert alert-danger" role="alert">
                     </div>
                 </div>
+                <div id="ballsWaveG">
+                    <div id="ballsWaveG_1" class="ballsWaveG"></div>
+                    <div id="ballsWaveG_2" class="ballsWaveG"></div>
+                    <div id="ballsWaveG_3" class="ballsWaveG"></div>
+                    <div id="ballsWaveG_4" class="ballsWaveG"></div>
+                    <div id="ballsWaveG_5" class="ballsWaveG"></div>
+                    <div id="ballsWaveG_6" class="ballsWaveG"></div>
+                    <div id="ballsWaveG_7" class="ballsWaveG"></div>
+                    <div id="ballsWaveG_8" class="ballsWaveG"></div>
+                </div>
                 <button style="background-color: #0f3971;" type="button" id="bLogin" class="btn btn-primary col-12">Iniciar Sesión</button><br><br>
             </form>
+            
         </div>
     
         <div id="contentCursos" class="container mt-2">
-            <h3><b>Cursos:</b></h3>
             <!-- Content here -->
         </div>
     
@@ -66,6 +81,13 @@
             <!-- Content here -->
             <h3><b>Logout:</b></h3>
             <p>¿Desea cerrar su sesión?</p>
+            <div class="cssload-loader">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div><br id="brAux">
             <div class="row">
                 <div class="col">
                     <button id="bLogoutX" type="button" class="btn btn-danger col-12">Salir</button>
@@ -89,6 +111,7 @@
         </div>
     
     </div>
+    <div id="hidden1" style="display: none;"></div>
 
     <!-- Usuario&nbsp;<input type="text" id="username" size=50 value=""><br>
     Contraseña&nbsp;<input type="password" id="password" size=50 value=""><br><br>

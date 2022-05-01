@@ -1,6 +1,6 @@
 {
 	"name": "Extensión PatmOS",
-	"version": "2.0",
+	"version": "2.1",
 	"manifest_version": 3,
 	"author": "Eduardo Antonio Arce Saavedra",
 	"description": "Extensión para ver cursos y tareas pendientes del PatmOS",

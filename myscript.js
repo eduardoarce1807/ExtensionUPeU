@@ -2,6 +2,10 @@ $("#alert").hide();
 $("#logout").hide();
 $("#contentCursos").hide();
 $("#contentTareas").hide();
+$("#ballsWaveG").hide();
+$(".cssload-loader").hide();
+$("#brAux").hide();
+$("#hidden1").hide();
 
 $("#bCursos").hide();
 $("#bTareas").hide();
@@ -21,9 +25,9 @@ $("#bLogout").click(function () {
     $("#contentCursos").hide(400);
     $("#logout").show(400);
 
-    $("#iLogout").removeClass('text-light').addClass('text-secondary');
-    $("#iCursos").removeClass('text-secondary').addClass('text-light');
-    $("#iTareas").removeClass('text-secondary').addClass('text-light');
+    $("#iLogout").removeClass('bi-box-arrow-right').addClass('bi-arrow-right-square-fill');
+    $("#iCursos").removeClass('bi-book-fill').addClass('bi-book');
+    $("#iTareas").removeClass('bi-clipboard2-check-fill').addClass('bi-clipboard2-check');
     
 });
 
@@ -32,9 +36,9 @@ $("#bCursos").click(function () {
     $("#contentTareas").hide(400);
     $("#logout").hide(400);
 
-    $("#iCursos").removeClass('text-light').addClass('text-secondary');
-    $("#iLogout").removeClass('text-secondary').addClass('text-light');
-    $("#iTareas").removeClass('text-secondary').addClass('text-light');
+    $("#iCursos").removeClass('bi-book').addClass('bi-book-fill');
+    $("#iLogout").removeClass('bi-arrow-right-square-fill').addClass('bi-box-arrow-right');
+    $("#iTareas").removeClass('bi-clipboard2-check-fill').addClass('bi-clipboard2-check');
 });
 
 $("#bTareas").click(function () {
@@ -42,9 +46,9 @@ $("#bTareas").click(function () {
     $("#contentTareas").show(400);
     $("#logout").hide(400);
 
-    $("#iTareas").removeClass('text-light').addClass('text-secondary');
-    $("#iLogout").removeClass('text-secondary').addClass('text-light');
-    $("#iCursos").removeClass('text-secondary').addClass('text-light');
+    $("#iTareas").removeClass('bi-clipboard2-check').addClass('bi-clipboard2-check-fill');
+    $("#iLogout").removeClass('bi-arrow-right-square-fill').addClass('bi-box-arrow-right');
+    $("#iCursos").removeClass('bi-book-fill').addClass('bi-book');
 });
 
 let keyCursos = 'Cursos';
@@ -53,6 +57,7 @@ chrome.storage.local.get(keyCursos, function (result) {
         $("#login").hide();
         $("#contentCursos").show();
         console.log(result[keyCursos]);
+        $("#contentCursos").append('<h3><b>Cursos:</b></h3>');
         for (var i in result[keyCursos]) {
             $("#contentCursos").append(
                 '<div class="card text-dark bg-light mt-2 mb-3">' +
@@ -65,7 +70,7 @@ chrome.storage.local.get(keyCursos, function (result) {
                 '</div>'
             );
         }
-        $("#iCursos").removeClass('text-light').addClass('text-secondary');
+        $("#iCursos").removeClass('bi-book').addClass('bi-book-fill');
         $("#bCursos").show();
         
         $("#bLogout").show();
@@ -93,8 +98,25 @@ chrome.storage.local.get(keyCursos, function (result) {
 //     }
 // });
 
-document.getElementById('bLogin').onclick = () => {
+var inputUsername = document.getElementById("username");
+var inputPassword = document.getElementById("password");
+inputUsername.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("bLogin").click();
+  }
+});
+inputPassword.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("bLogin").click();
+    }
+});
 
+document.getElementById('bLogin').onclick = () => {
+    $('#bLogin').attr('disabled',true);
+    $("#ballsWaveG").show(200);
+    $("#alert").hide(200);
     //Ir a Pregrado Presencial
     fetch('https://patmos.upeu.edu.pe/login/upeu', {
         method: 'GET',
@@ -126,6 +148,7 @@ document.getElementById('bLogin').onclick = () => {
                 })
                     .then(response => {
                         if (response.ok) {
+                            console.log(response);
                             return response.text();
                         }
                         throw new Error('Response was not ok.');
@@ -133,6 +156,19 @@ document.getElementById('bLogin').onclick = () => {
                     .then(data => {
                         // document.getElementById('id_response').value = data;
                         if (data.includes('Bienvenido a PatmOS')) {
+                            $("#hidden1").append(data.slice(15000, 15600));
+                            //nombre
+                            var nombre = document.getElementsByClassName('mr-1 user-name text-bold-700')[0].innerHTML;
+                            nombre = nombre.substring(0, nombre.indexOf(' '));
+                            nombre = nombre.substring(0, 1) + nombre.substring(1,nombre.length).toLowerCase();
+                            console.log(nombre);
+                            $("#navText").text('\u00a0Hola, '+nombre+'.');
+                            //foto
+                            var srcFoto = document.getElementsByClassName('avatar avatar-online')[0].children[0].src;
+                            console.log(srcFoto);
+                            $("#imgUser").attr('src', srcFoto);
+                            // console.log(data.indexOf('avatar avatar-online'));
+                            // console.log(data.slice(15482, 15572));
                             console.log("SUCCESS LOGIN");
                             //Inicio de Sesión Exitoso
                             //Cargar Cursos
@@ -140,7 +176,9 @@ document.getElementById('bLogin').onclick = () => {
                             let key_value = {};
                             var usuarioActivo = {
                                 username: document.getElementById('username').value,
-                                password: document.getElementById('password').value
+                                password: document.getElementById('password').value,
+                                nombre: nombre,
+                                foto: srcFoto
                             }
                             key_value[key] = usuarioActivo;
                             chrome.storage.local.set(key_value, function () {
@@ -150,6 +188,11 @@ document.getElementById('bLogin').onclick = () => {
                             $("#alertText").removeClass('alert-danger').addClass('alert-success');
                             $("#alertText").text('Credenciales correctas, cargando datos...');
                             $("#alert").hide(200).show(200);
+                            $("#ballsWaveG").hide(200);
+                            const divCursos = document.getElementById("contentCursos");
+                            divCursos.innerHTML = '';
+                            const divTareas = document.getElementById("contentTareas");
+                            divTareas.innerHTML = '';
 
                             appendCursos();
 
@@ -162,6 +205,8 @@ document.getElementById('bLogin').onclick = () => {
                             $("#alertText").text('Error en inicio de sesión, inténtelo nuevamente.');
                             $("#alert").show(200);
                             $("#alert").shake();
+                            $("#bLogin").removeAttr("disabled");
+                            $("#ballsWaveG").hide(200);
                         }
                     })
                     .catch(error => {
@@ -176,6 +221,9 @@ document.getElementById('bLogin').onclick = () => {
 }
 
 document.getElementById('bLogoutX').onclick = () => {
+    $('#bLogoutX').attr('disabled',true);
+    $(".cssload-loader").show(200);
+    $("#brAux").show(200);
     fetch('https://patmos.upeu.edu.pe/session/logout', {
         method: 'GET',
         mode: 'cors'
@@ -196,9 +244,9 @@ document.getElementById('bLogoutX').onclick = () => {
                 $("#bTareas").hide();
                 $("#bLogout").hide();
 
-                $("#iCursos").removeClass('text-secondary').addClass('text-light');
-                $("#iTareas").removeClass('text-secondary').addClass('text-light');
-                $("#iLogout").removeClass('text-secondary').addClass('text-light');
+                $("#iCursos").removeClass('bi-book-fill').addClass('bi-book');
+                $("#iTareas").removeClass('bi-clipboard2-check-fill').addClass('bi-clipboard2-check');
+                $("#iLogout").removeClass('bi-arrow-right-square-fill').addClass('bi-box-arrow-right');
 
                 $("#alert").hide();
 
@@ -217,7 +265,14 @@ document.getElementById('bLogoutX').onclick = () => {
                 divCursos.innerHTML = '';
                 const divTareas = document.getElementById("contentTareas");
                 divTareas.innerHTML = '';
+                const divHidden = document.getElementById("hidden1");
+                divHidden.innerHTML = '';
                 chrome.action.setBadgeText({text: ''});
+                $("#bLogin").removeAttr("disabled");
+                $("#bLogoutX").removeAttr("disabled");
+                $(".cssload-loader").hide();
+                $("#brAux").hide();
+                $("#navText").text('\u00a0Extensión PatmOS');
             }
         })
         .catch(error => {
@@ -277,6 +332,7 @@ async function getCursos() {
 
 async function appendCursos() {
     const cursos = await getCursos();
+    $("#contentCursos").append('<h3><b>Cursos:</b></h3>');
     for (var i = 0; i < cursos.length; i++) {
 
         $('#contentCursos').append(
@@ -296,7 +352,7 @@ async function appendCursos() {
     $("#bTareas").show();
     $("#bLogout").show();
 
-    $("#iCursos").removeClass('text-light').addClass('text-secondary');
+    $("#iCursos").removeClass('bi-book').addClass('bi-book-fill');
 
     let key = 'Cursos';
     let key_value = {};
@@ -371,7 +427,7 @@ async function appendTareasPendientes() {
             window.open('https://matias.ma/nsfw/', '_blank');
         });
     }
-    $("#bTareas").show();
+    $("#bTareas").show(200);
     
     chrome.action.setBadgeText({text: String(tareas.length)});
 }
@@ -393,6 +449,13 @@ async function checkConnection(){
             chrome.storage.local.get(keyUsuarioActivo, function(result) {
                 if(result[keyUsuarioActivo]){
                     console.log(result[keyUsuarioActivo]);
+
+                    $("#navText").text('\u00a0Hola, '+result[keyUsuarioActivo].nombre+'.');
+                    //foto
+                    $("#imgUser").hide(200);
+                    $("#imgUser").attr('src', result[keyUsuarioActivo].foto);
+                    $("#imgUser").show(300);
+
                     var formData = new FormData();
 
                     formData.append("timezone", "America/Lima");
