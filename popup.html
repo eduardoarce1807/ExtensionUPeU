@@ -17,14 +17,15 @@
     <nav class="navbar navbar-dark" style="background-color: #0f3971;">
         <div class="container">
             <a class="navbar-brand" href="#" style="font-size: 17px;">
-                <img src="logo-upeu.png" alt="" width="30"
-                    height="30">
+                <img src="logo-upeu.png" alt="" width="30" height="30">
                 <span id="navText" class="navbar-text" style="color: white;">
                     &nbsp;Extensión PatmOS
                 </span>
             </a>
-            <a id="bCursos"><i id="iCursos" style="text-align: right; padding-right: 8px;" class="bi bi-book text-light"></i></a>
-            <a id="bTareas"><i id="iTareas" style="text-align: right; padding-right: 8px;" class="bi bi-clipboard2-check text-light"></i></a>
+            <a id="bCursos"><i id="iCursos" style="text-align: right; padding-right: 8px;"
+                    class="bi bi-book text-light"></i></a>
+            <a id="bTareas"><i id="iTareas" style="text-align: right; padding-right: 8px;"
+                    class="bi bi-clipboard2-check text-light"></i></a>
             <!-- <a id="bLogout"><i id="iLogout" style="text-align: right; padding-right: 8px;" class="bi bi-box-arrow-right text-light"></i></a> -->
             <span id="bLogout">
                 <img id="imgUser" style="border-radius: 50%;" width="30px" height="30px" src="user.svg" alt="avatar">
@@ -40,15 +41,20 @@
                     <label for="username" class="form-label"><b>Usuario</b></label>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-fill"></i></span>
-                        <input value="eduardoarce" type="text" class="form-control" placeholder="Usuario" id="username" aria-label="Usuario" aria-describedby="basic-addon1">
+                        <input type="text" class="form-control" placeholder="Ingrese su usuario" id="username" aria-label="Usuario"
+                            aria-describedby="basic-addon1">
                     </div>
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label"><b>Contraseña</b></label>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon2"><i class="bi bi-lock-fill"></i></span>
-                        <input value="Laptophp18$" type="password" class="form-control" placeholder="Contraseña" id="password" aria-label="Password" aria-describedby="basic-addon2">
+                        <input type="password" class="form-control" placeholder="Ingrese su contraseña" id="password"
+                            aria-label="Password" aria-describedby="basic-addon2">
                     </div>
+                    <div id="passwordHelpBlock" class="form-text">
+                        Inicie sesión con su usuario y contraseña con los que accede al PatmOS.
+                      </div>
                 </div>
                 <div id="alert" class="col-12">
                     <div id="alertText" class="alert alert-danger" role="alert">
@@ -64,19 +70,20 @@
                     <div id="ballsWaveG_7" class="ballsWaveG"></div>
                     <div id="ballsWaveG_8" class="ballsWaveG"></div>
                 </div>
-                <button style="background-color: #0f3971;" type="button" id="bLogin" class="btn btn-primary col-12">Iniciar Sesión</button><br><br>
+                <button style="background-color: #0f3971;" type="button" id="bLogin"
+                    class="btn btn-primary col-12">Iniciar Sesión</button><br><br>
             </form>
-            
+
         </div>
-    
+
         <div id="contentCursos" class="container mt-2">
             <!-- Content here -->
         </div>
-    
+
         <div id="contentTareas" class="container mt-2">
             <!-- Content here -->
         </div>
-    
+
         <div id="logout" class="container mt-2">
             <!-- Content here -->
             <h3><b>Logout:</b></h3>
@@ -96,20 +103,39 @@
             <br>
         </div>
     </div>
-    
-    <div class="fixed-bottom bg-light" style="height:70px;">
-        
-        <div class="container my-3">
-            <div class="row">
-                <div class="col-6">
-                    <button style="background-color: #0f3971;" id="goPatmos" type="button" class="btn btn-dark col-12">Abrir PatmOS&nbsp;&nbsp;<i class="bi bi-box-arrow-up-right"></i></button><br>
+
+    <div class="fixed-bottom" style="height:70px; background-color: #0f3971;">
+        <div id="loadingTareas">
+            <div class="row justify-content-center align-items-center" style="padding-top: 14px;">
+                <div class="col-7 text-center">
+                    <span class="text-light">
+                        Actualizando Tareas
+                    </span>
                 </div>
-                <div class="col-6">
-                    <button style="background-color: #0f3971;" id="goLamb" type="button" class="btn btn-dark col-12">Abrir Lamb&nbsp;&nbsp;<i class="bi bi-box-arrow-up-right"></i></button><br>
+                <div class="col-5">
+                    <div class="cssload-jumping">
+                        <span></span><span></span><span></span><span></span><span></span>
+                    </div>
                 </div>
             </div>
         </div>
-    
+        <div id="buttonsPatmosLamb">
+            <div class="container my-3">
+                <div class="row">
+                    <div class="col-6">
+                        <button style="background-color: #2159a1;" id="goPatmos" type="button"
+                            class="btn btn-outline-light col-12">Abrir PatmOS&nbsp;&nbsp;<i
+                                class="bi bi-box-arrow-up-right"></i></button><br>
+                    </div>
+                    <div class="col-6">
+                        <button style="background-color: #2159a1;" id="goLamb" type="button"
+                            class="btn btn-outline-light col-12">Abrir Lamb&nbsp;&nbsp;<i
+                                class="bi bi-box-arrow-up-right"></i></button><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
     <div id="hidden1" style="display: none;"></div>
 

@@ -169,8 +169,8 @@ body {
 }
 
 .cssload-loader {
-	width: 97px;
-	height: 19px;
+	width: 62px;
+	height: 12px;
 	position: absolute;
 	left: 50%;
 	transform: translate(-50%, -50%);
@@ -181,8 +181,8 @@ body {
 }
 .cssload-loader > div {
 	content: " ";
-	width: 19px;
-	height: 19px;
+	width: 12px;
+	height: 12px;
 	background: rgb(220,53,69);
 	border-radius: 100%;
 	position: absolute;
@@ -225,7 +225,7 @@ body {
 
 @keyframes cssload-shift {
 	0% {
-		left: -58px;
+		left: -37px;
 		opacity: 0;
 		background-color: rgb(220,53,69);
 	}
@@ -234,11 +234,11 @@ body {
 		opacity: 1;
 	}
 	90% {
-		left: 97px;
+		left: 62px;
 		opacity: 1;
 	}
 	100% {
-		left: 156px;
+		left: 100px;
 		background-color: rgb(220,53,69);
 		opacity: 0;
 	}
@@ -246,7 +246,7 @@ body {
 
 @-o-keyframes cssload-shift {
 	0% {
-		left: -58px;
+		left: -37px;
 		opacity: 0;
 		background-color: rgb(220,53,69);
 	}
@@ -255,11 +255,11 @@ body {
 		opacity: 1;
 	}
 	90% {
-		left: 97px;
+		left: 62px;
 		opacity: 1;
 	}
 	100% {
-		left: 156px;
+		left: 100px;
 		background-color: rgb(220,53,69);
 		opacity: 0;
 	}
@@ -267,7 +267,7 @@ body {
 
 @-ms-keyframes cssload-shift {
 	0% {
-		left: -58px;
+		left: -37px;
 		opacity: 0;
 		background-color: rgb(220,53,69);
 	}
@@ -276,11 +276,11 @@ body {
 		opacity: 1;
 	}
 	90% {
-		left: 97px;
+		left: 62px;
 		opacity: 1;
 	}
 	100% {
-		left: 156px;
+		left: 100px;
 		background-color: rgb(220,53,69);
 		opacity: 0;
 	}
@@ -288,7 +288,7 @@ body {
 
 @-webkit-keyframes cssload-shift {
 	0% {
-		left: -58px;
+		left: -37px;
 		opacity: 0;
 		background-color: rgb(220,53,69);
 	}
@@ -297,11 +297,11 @@ body {
 		opacity: 1;
 	}
 	90% {
-		left: 97px;
+		left: 62px;
 		opacity: 1;
 	}
 	100% {
-		left: 156px;
+		left: 100px;
 		background-color: rgb(220,53,69);
 		opacity: 0;
 	}
@@ -309,7 +309,7 @@ body {
 
 @-moz-keyframes cssload-shift {
 	0% {
-		left: -58px;
+		left: -37px;
 		opacity: 0;
 		background-color: rgb(220,53,69);
 	}
@@ -318,13 +318,164 @@ body {
 		opacity: 1;
 	}
 	90% {
-		left: 97px;
+		left: 62px;
 		opacity: 1;
 	}
 	100% {
-		left: 156px;
+		left: 100px;
 		background-color: rgb(220,53,69);
 		opacity: 0;
 	}
 }
 
+.cssload-jumping{
+	position:relative;
+	display:block;
+	margin: 8px auto;
+	width:71px;
+}
+	
+.cssload-jumping, .cssload-jumping * {
+	box-sizing: border-box;
+}
+
+.cssload-jumping span {
+	display: inline-block;
+	height: 10px;
+	width: 10px;
+	background: rgb(15,57,113);
+	border-radius: 325px;
+	background-clip: padding-box;
+		-o-background-clip: padding-box;
+		-ms-background-clip: padding-box;
+		-webkit-background-clip: padding-box;
+		-moz-background-clip: padding-box;
+}
+
+.cssload-jumping span:nth-child(1) {
+	animation: scale 1.15s 0.12s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+		-o-animation: scale 1.15s 0.12s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+		-ms-animation: scale 1.15s 0.12s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+		-webkit-animation: scale 1.15s 0.12s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+		-moz-animation: scale 1.15s 0.12s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+.cssload-jumping span:nth-child(2) {
+	animation: scale 1.15s 0.23s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+		-o-animation: scale 1.15s 0.23s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+		-ms-animation: scale 1.15s 0.23s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+		-webkit-animation: scale 1.15s 0.23s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+		-moz-animation: scale 1.15s 0.23s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+.cssload-jumping span:nth-child(3) {
+	animation: scale 1.15s 0.35s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+		-o-animation: scale 1.15s 0.35s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+		-ms-animation: scale 1.15s 0.35s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+		-webkit-animation: scale 1.15s 0.35s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+		-moz-animation: scale 1.15s 0.35s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+.cssload-jumping span:nth-child(4) {
+	animation: scale 1.15s 0.46s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+		-o-animation: scale 1.15s 0.46s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+		-ms-animation: scale 1.15s 0.46s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+		-webkit-animation: scale 1.15s 0.46s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+		-moz-animation: scale 1.15s 0.46s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+.cssload-jumping span:nth-child(5) {
+	animation: scale 1.15s 0.58s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+		-o-animation: scale 1.15s 0.58s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+		-ms-animation: scale 1.15s 0.58s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+		-webkit-animation: scale 1.15s 0.58s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+		-moz-animation: scale 1.15s 0.58s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+
+
+@keyframes scale {
+	0% {
+		transform: scale(0);
+	}
+	25% {
+		transform: scale(0.9, 0.9);
+		background: rgba(100,176,204,0.98);
+	}
+	50% {
+		transform: scale(1, 1);
+		margin: 0 2px;
+		background: rgb(15,57,113);
+	}
+	100% {
+		transform: scale(0);
+	}
+}
+
+@-o-keyframes scale {
+	0% {
+		-o-transform: scale(0);
+	}
+	25% {
+		-o-transform: scale(0.9, 0.9);
+		background: rgba(100,176,204,0.98);
+	}
+	50% {
+		-o-transform: scale(1, 1);
+		margin: 0 2px;
+		background: rgb(15,57,113);
+	}
+	100% {
+		-o-transform: scale(0);
+	}
+}
+
+@-ms-keyframes scale {
+	0% {
+		-ms-transform: scale(0);
+	}
+	25% {
+		-ms-transform: scale(0.9, 0.9);
+		background: rgba(100,176,204,0.98);
+	}
+	50% {
+		-ms-transform: scale(1, 1);
+		margin: 0 2px;
+		background: rgb(15,57,113);
+	}
+	100% {
+		-ms-transform: scale(0);
+	}
+}
+
+@-webkit-keyframes scale {
+	0% {
+		-webkit-transform: scale(0);
+	}
+	25% {
+		-webkit-transform: scale(0.9, 0.9);
+		background: rgba(100,176,204,0.98);
+	}
+	50% {
+		-webkit-transform: scale(1, 1);
+		margin: 0 2px;
+		background: rgb(15,57,113);
+	}
+	100% {
+		-webkit-transform: scale(0);
+	}
+}
+
+@-moz-keyframes scale {
+	0% {
+		-moz-transform: scale(0);
+	}
+	25% {
+		-moz-transform: scale(0.9, 0.9);
+		background: rgba(100,176,204,0.98);
+	}
+	50% {
+		-moz-transform: scale(1, 1);
+		margin: 0 2px;
+		background: rgb(15,57,113);
+	}
+	100% {
+		-moz-transform: scale(0);
+	}
+}
